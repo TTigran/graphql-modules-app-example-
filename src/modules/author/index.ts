@@ -8,5 +8,5 @@ const typeDefs = importSchema(
 
 export const AuthorModule = new GraphQLModule({
     typeDefs,
-    resolvers
+    resolvers,
 });
