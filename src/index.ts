@@ -1,10 +1,10 @@
 import express          from 'express';
-import { appModule } from './modules/app';
+import { appModule }    from './modules/app.module.';
 import { ApolloServer } from 'apollo-server-express';
 import '../env';
 
 const port = process.env.NODE_PORT;
-const { schema, context } = appModule;
+const { schema,context } = appModule;
 const app = express();
 
 const server = new ApolloServer({

@@ -1,5 +1,5 @@
 import { connect } from 'mongoose';
-import { AuthorModel, } from './model';
+import { Author } from './model';
 import '../env';
 
 (async function () {
@@ -9,11 +9,6 @@ import '../env';
     await connect(connectionsString, {useNewUrlParser: true, useUnifiedTopology: true});
 })();
 
-export const getModel = async () => {
-    try {
-        const Author = AuthorModel;
-        return {Author};
-    } catch (e) {
-        console.error(e.message);
-    }
-};
+export const model = { Author };
+
+

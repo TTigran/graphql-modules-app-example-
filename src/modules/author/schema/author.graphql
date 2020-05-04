@@ -2,19 +2,15 @@
     getAuthors: [Author]
     getAuthor(id: String!): Author
     hello: String
-    getUser(id: String!): User
+
   }
 
   type Mutation {
-     addAuthor(id: Int!, name: String!): Author
+     addAuthor(id: String!, name: String!): Author
   }
 
   type Author {
-     id:ID!
+     id:String!
      name:String!
   }
 
-  type User{
-     _id:ID!
-      username:String!
-  }

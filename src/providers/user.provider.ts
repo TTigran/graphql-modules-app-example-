@@ -1,21 +1,23 @@
-import { Injectable } from '@graphql-modules/di';
-import "reflect-metadata";
+import {Injectable, ProviderScope} from '@graphql-modules/di';
+import 'reflect-metadata'
 
-@Injectable()
-export class UserProvider  {
-  users = [
+@Injectable(
     {
-      _id: "0",
-      username: 'jhon'
-    },
-    {
-      _id: "1",
-      username: 'jhon1'
+        scope:ProviderScope.Application
     }
-  ];
-   getUserById(id: string) {
-   return this.users.find(user => user._id === id);
-  }
+)
+export class UserProvider {
+
+    getUserById(id: string){
+      const  users = [
+            {
+                _id: '0',
+                username: 'jhon'
+            }
+        ];
+
+      return  users.find(user => user._id === id);
+    }
 }
 
 

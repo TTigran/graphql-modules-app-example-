@@ -1,11 +1,9 @@
-import { Author } from '../../@types/model/author';
-import { getModel } from '../../db';
-
+import { Author } from '../../types/model/author';
+import { model } from '../../db';
 
 export const addAuthor = async (root: any, {id, name}: {name: string, id: number}) => {
     const createdData: Author = { id, name};
     try {
-        const model = await getModel();
         return model.Author.create(createdData);
     }catch (e) {
         console.error(e.message);

@@ -3,10 +3,9 @@ import { Schema, Document, model }  from 'mongoose';
 export interface IAuthor extends Document {
     id: number;
     name: string;
-
 }
 
-const Author: Schema = new Schema({
+const AuthorModel: Schema = new Schema({
     id: {
         type: Number,
         required: true,
@@ -16,7 +15,7 @@ const Author: Schema = new Schema({
 
 });
 
-export const AuthorModel = model<IAuthor>('Author', Author);
+export const Author = model<IAuthor>('Author', AuthorModel);
 
 
 
